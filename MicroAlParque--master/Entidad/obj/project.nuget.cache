@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "GBchGk0PIPAoGI2vezPdtVxznp4+U0Vcc+WMrlFvnlnax6IUKDBKeOwVf6zzQ629chRA04qovzYZju1wD9GalQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\DELL\\Downloads\\microAlparque\\MicroAlParque--master\\Entidad\\Entidad.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
