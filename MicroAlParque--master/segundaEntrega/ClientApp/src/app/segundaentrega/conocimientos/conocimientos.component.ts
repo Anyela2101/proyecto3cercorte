@@ -6,6 +6,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { Conocimiento } from '../models/conocimiento';
 import { ConocimientoService} from '../../services/conocimiento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-conocimientos',
@@ -20,7 +21,7 @@ export class ConocimientosComponent implements OnInit {
   conocimientos:Conocimiento;
 
    constructor(private personaService: PersonaService,private conocimientoService:ConocimientoService,
-     private formBuilder: FormBuilder, private modalService: NgbModal) { }
+     private formBuilder: FormBuilder, private modalService: NgbModal,private router: Router) { }
 
 
   ngOnInit(): void {
@@ -63,7 +64,8 @@ export class ConocimientosComponent implements OnInit {
         if (p != null) {
           const messageBox = this.modalService.open(AlertModalComponent);
           messageBox.componentInstance.title="Resultado Operacion";
-          messageBox.componentInstance.message ='Persona Creada!'
+          messageBox.componentInstance.message ='Persona Creada!';
+          this.router.navigate(['/actitudes']);
           this.conocimientos = p;
         }
       });

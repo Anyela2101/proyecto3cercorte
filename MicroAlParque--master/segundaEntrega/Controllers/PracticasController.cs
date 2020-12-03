@@ -13,10 +13,10 @@ namespace segundaEntrega.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PracticasControoler:ControllerBase
+    public class PracticasController:ControllerBase
     {
         private readonly PracticasServices _practicasService;
-        public PracticasControoler(PersonaContext context){
+        public PracticasController(PersonaContext context){
     
             _practicasService = new PracticasServices(context);
         }
@@ -35,7 +35,7 @@ namespace segundaEntrega.Controllers
 
             if (response.Error)
             {
-                ModelState.AddModelError("Guardar Conocimientos", response.Mensaje);
+                ModelState.AddModelError("Guardar Practicas", response.Mensaje);
                 var problemDetails = new ValidationProblemDetails(ModelState)
                 {
                     Status = StatusCodes.Status400BadRequest,

@@ -1,48 +1,76 @@
 <section class="form-registro">
-    <h1 align="center">Practicas</h1>
-    <section class="form-registro1">
-      <div class="pregresp">
-        <div class="pregunta">1. ¿Utiliza bata, tapa bocas y malla para cubrir el cabello mientras manipula alimentos?<br />
-        </div>
-        <div class="respuestas">
-          <input type="radio" name="preg1" value="1" /> Sí<br />
-          <input type="radio" name="preg1" value="2" /> No<br />
-          <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
+  <h1 align="center">Practicas </h1>
+  <section class="form-registro1">
+    <div class="row">
+      <div class="col-8">
+        <div class="text-center">
+          <label>Identificacion</label> 
+          <input [(ngModel)]="identificacion" type="text" class="form-control">    
         </div>
       </div>
-
+    </div>
+    <button  class="btn2 btn-danger btn-lg"(click)="Buscar()">Buscar</button>    
+    <form [formGroup]="formGroup">
       <div class="pregresp">
-        <div class="pregunta">2. ¿Manipula alimentos y dinero al mismo tiempo?<br />
+        <div class="pregunta1">1. ¿Conoce las normas de higiene para manipulacion de alimentos?<br />
         </div>
-        <div class="respuestas">
-          <input type="radio" name="preg1" value="1" /> Sí<br />
-          <input type="radio" name="preg1" value="2" /> No<br />
-          <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
+        <div class="form-group">
+          <select name="pregunta1" class="form-control" formControlName="pregunta1" [ngClass]="{ 'is-invalid': control.pregunta1.touched && control.pregunta1.errors}">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+            <option value="3">Ns/Nc</option>
+          </select>
         </div>
       </div>
-
       <div class="pregresp">
-        <div class="pregunta">3. ¿Con que frecuencia se lava las manos para manipular alimentos?<br />
+        <div class="pregunta2">2. ¿Ha recibido capacitacion sobre buenas practicas de manufactura?<br />
         </div>
-        <div class="respuestas">
-          <input type="radio" name="preg1" value="1" /> Sí<br />
-          <input type="radio" name="preg1" value="2" /> No<br />
-          <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
+        <div class="form-group">
+          <select name="pregunta2" class="form-control" formControlName="pregunta2" [ngClass]="{ 'is-invalid': control.pregunta2.touched && control.pregunta2.errors}">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+            <option value="3">Ns/Nc</option>
+          </select>
         </div>
       </div>
-       </section>
-
-       <section class="form-registro2">
-        <div class="pregresp">
-          <div class="pregunta">4. Al momento de preparar alimentos ¿Retira sus prends?<br />
-          </div>
-          <div class="respuestas">
-            <input type="radio" name="preg1" value="1" /> Sí<br />
-            <input type="radio" name="preg1" value="2" /> No<br />
-            <input type="radio" name="preg1" value="3" /> Ns/Nc<br />
-          </div>
+      
+      <button type="button" class="btn btn-danger btn-lg btn-block" (click)="onSubmit()">Finalizar</button>
+    </form>
+    
+  </section>
+  <section class="form-registro2">
+    <form [formGroup]="formGroup">
+      <form class="formGroup">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="string"  name="nombrepersona" [(ngModel)]="persona.nombres"  readonly/>
+        </div> 
+      </form>
+      <div class="pregresp">
+        <div class="pregunta3">3. ¿De que trata la resolucion 2674 del 2003?<br />
         </div>
-        <button type="button" class="btn btn-danger btn-lg btn-block">Siguiente</button>
-       <button type="button" class="btn btn-danger btn-lg btn-block">Anterior</button>
-       </section>     
+        <div class="form-group">
+          <select name="pregunta3" class="form-control" formControlName="pregunta3" [ngClass]="{ 'is-invalid': control.pregunta3.touched && control.pregunta3.errors}">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+            <option value="3">Ns/Nc</option>
+          </select>
+        </div>
+      </div>
+      <div class="pregresp">
+        <div class="pregunta4">4. ¿Sabe que es un alimento inocuo?<br />
+        </div>
+        <div class="form-group">
+          <select name="pregunta4" class="form-control" formControlName="pregunta4" [ngClass]="{ 'is-invalid': control.pregunta4.touched && control.pregunta4.errors}">
+            <option value="1">Si</option>
+            <option value="2">No</option>
+            <option value="3">Ns/Nc</option>
+          </select>
+        </div>
+      </div>
+      <button type="button" class="btn btn-danger btn-lg btn-block">Anterior</button>
+    </form> 
+  </section>     
 </section>
+
+
