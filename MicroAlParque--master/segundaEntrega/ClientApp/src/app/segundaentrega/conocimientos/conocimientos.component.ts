@@ -57,13 +57,14 @@ export class ConocimientosComponent implements OnInit {
 
   add(){
     this.conocimientos = this.formGroup.value;
-    this.conocimientos.idpersona = this.persona.identificacion
+    this.conocimientos.idpersona = this.persona.identificacion;
+    console.log(this.persona.nombres);
     if(this.persona != null){
     
       this.conocimientoService.post(this.conocimientos).subscribe(p => {
         if (p != null) {
           const messageBox = this.modalService.open(AlertModalComponent);
-          messageBox.componentInstance.title="Resultado Operacion";
+          messageBox.componentInstance.title="Resultado Operacioon";
           messageBox.componentInstance.message ='Persona Creada!';
           this.router.navigate(['/actitudes']);
           this.conocimientos = p;

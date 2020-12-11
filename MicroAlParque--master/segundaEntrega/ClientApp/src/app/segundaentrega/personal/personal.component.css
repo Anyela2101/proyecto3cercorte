@@ -2,14 +2,14 @@
     position: absolute;
     top: 100px;
     left:400px;
-    width:1000px;
-    height: 500px;
-    background:  #535455;
+    width:1200px;
+    height: 600px;
+    background:   #fcfdff;
     padding: 30px;
     border-radius: 4px;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    box-shadow: 7px 13px 37px #000;
+    color: rgb(0, 0, 0);
+    box-shadow: 7px 13px 37px rgb(151, 145, 145);
 }
 
 .form-registro1{
@@ -22,17 +22,22 @@
     width:500px;/*
     border: 1px solid white;*/
     float: right;
-    margin-top: -380px;
+    margin-top: -400px;
 }
 
 .form-registro1 h1 {
     font-size: 20px;
     margin-bottom: 20px;
 }
-button{
-    width: 350px;
-    margin-top: 15px;
+.form-group{
+    padding-bottom: 25px;
+    height: 57px;
 }
-.form-registro2 button{
-    margin-top: -20px;
+input{
+    width: 68%;
+    float:right;
+    margin-top: -35px;
+}
+.form-group2{
+    padding-bottom: 115px;
 }

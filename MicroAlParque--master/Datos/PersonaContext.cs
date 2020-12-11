@@ -13,6 +13,7 @@ namespace Datos
          public DbSet <Conocimientos> Conocimientos {get;set;}
          public DbSet <Actitudes> Actitudes {get;set;}
          public DbSet <Practicas> Practicas {get;set;}
+         public DbSet <ListaChequeo> ListaChequeos {get;set;}
 
          protected override void OnModelCreating(ModelBuilder modelBuilder){
              modelBuilder
@@ -35,6 +36,11 @@ namespace Datos
                 .HasOne<Persona>()
                 .WithMany()
                 .HasForeignKey(p => p.Idpersona);
+                modelBuilder
+                .Entity<ListaChequeo>()
+                .HasOne<Restaurante>()
+                .WithMany()
+                .HasForeignKey(p => p.nit);
          }
 
     }

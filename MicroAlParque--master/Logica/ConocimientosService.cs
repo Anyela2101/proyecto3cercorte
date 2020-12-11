@@ -24,6 +24,7 @@ namespace Logica
                 if(personaBuscada != null){
                     return new GuardarConocimientosResponse("Error, la persona ya se encuentra registrarada");
                 }
+                conocimientos.Calcularpuntos();
                 _context.Conocimientos.Add(conocimientos);
                 _context.SaveChanges();
                 return new GuardarConocimientosResponse(conocimientos);

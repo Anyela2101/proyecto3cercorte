@@ -22,6 +22,7 @@ namespace Logica
                 if(personaBuscada != null){
                     return new GuardarPracticasResponse("Error, la persona ya se encuentra registrarada");
                 }
+                practicas.Calcularpuntos();
                 _context.Practicas.Add(practicas);
                 _context.SaveChanges();
                 return new GuardarPracticasResponse(practicas);

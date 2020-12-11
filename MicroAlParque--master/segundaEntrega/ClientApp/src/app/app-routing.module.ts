@@ -9,9 +9,11 @@ import { PracticasComponent } from './segundaentrega/practicas/practicas.compone
 import { PersonalComponent } from './segundaentrega/personal/personal.component';
 import { PersonaConsultaComponent} from './segundaentrega/persona-consulta/persona-consulta.component'
 import { RestaurantesComponent } from './segundaentrega/restaurantes/restaurantes.component';
+import {RestauranteConsultaComponent } from './segundaentrega/restaurante-consulta/restaurante-consulta.component';
 import { ReportesComponent } from './segundaentrega/reportes/reportes.component';
 import { AuthGuard } from './services/auth.guard';
 import { LoginComponent } from './login/login.component';
+import { ListaChequeoComponent } from './segundaentrega/lista-chequeo/lista-chequeo.component';
 
 const routes: Routes = [ 
   {path: '', component: HomeComponent},
@@ -22,9 +24,10 @@ const routes: Routes = [
   {path: 'practicas', component: PracticasComponent},
   {path: 'examenes', component: ExamenesComponent},
   {path: 'restaurantes', component:RestaurantesComponent},
+  {path: 'restauranteconsulta', component:RestauranteConsultaComponent},
   {path: 'reportes', component:ReportesComponent},
+  {path: 'listachequeo', component:ListaChequeoComponent},
   {path: 'login', component: LoginComponent},
-
 ];
 
 @NgModule({

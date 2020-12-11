@@ -43,7 +43,7 @@ export class RestaurantesService {
     }
     buscar(idrestaurante: string): Observable<Restaurantes>
     {
-      return this.http.get<Restaurantes>(this.baseUrl+'api/Persona/'+idrestaurante)
+      return this.http.get<Restaurantes>(this.baseUrl+'api/Restaurante/'+idrestaurante)
       .pipe(
         tap(_ => this.handleErrorService.log('Encontrado')),
         catchError(this.handleErrorService.handleError<Restaurantes>('Buscar restaurante', null))

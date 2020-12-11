@@ -1,4 +1,4 @@
-export class Actitudes {
+export class ListaChequeo {
     codigo:number;
     pregunta1:string;
     pregunta2:string;
@@ -6,6 +6,8 @@ export class Actitudes {
     pregunta4:string;
     pregunta5:string;
     pregunta6:string;
-    idpersona:string;
-    
+    pregunta7:string;
+    pregunta8:string;
+    pregunta9:string;
+    nit:string;
 }

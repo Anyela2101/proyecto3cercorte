@@ -12,22 +12,22 @@
         <hr style="background-color: rgb(250, 81, 81);">
         <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
             data-target="#collapseEncuesta" aria-expanded="false" aria-controls="collapseEncuesta" [routerLink]='["/conocimientos"]'>
-            <span class="fas fa-users"></span>Conocimientos
+            <span class="fas fa-school"></span>Conocimientos
         </button>
         <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
             data-target="#collapseEncuesta" aria-expanded="false" aria-controls="collapseEncuesta" [routerLink]='["/actitudes"]'>
-            <span class="fas fa-users"></span>Actitudes
+            <span  class="fas fa-smile-wink"></span>Actitudes
         </button>
         <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
             data-target="#collapseEncuesta" aria-expanded="false" aria-controls="collapseEncuesta" [routerLink]='["/practicas"]'>
-            <span class="fas fa-users"></span>Practicas
+            <span class="fas fa-hotdog"></span>Practicas
         </button>
         <hr>
     </div>
     <p>
         <a data-toggle="collapse"
         data-target="#collapseRestaurante" aria-expanded="false" aria-controls="collapseRestaurante" *ngIf="currentUser">
-        <i class="far fa-address-book"></i><span>Restaurantes</span></a>
+        <i class="fas fa-utensils"></i><span>Restaurantes</span></a>
     </p>
     <div class="collapse Sub-Menu" id="collapseRestaurante">
         <hr style="background-color: rgb(250, 81, 81);">
@@ -36,15 +36,15 @@
             <span class="fas fa-users"></span>Registrar Restaurante
         </button>
         <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
-            data-target="#collapseRestaurante" aria-expanded="false" aria-controls="collapseRestaurante">
-            <span class="fas fa-users"></span>Consultar Restaurante
+            data-target="#collapseRestaurante" aria-expanded="false" aria-controls="collapseRestaurante" [routerLink]='["/restauranteconsulta"]'>
+            <span class="fas fa-list-ol"></span>Consultar Restaurante
         </button>
         <hr>
     </div>
     <p>
         <a data-toggle="collapse"
         data-target="#collapsePersonal" aria-expanded="false" aria-controls="collapsePersonal" *ngIf="currentUser">
-        <i class="far fa-address-book"></i><span>Personal</span></a>
+        <i class="fas fa-user-tie"></i><span>Personal</span></a>
     </p>
     <div class="collapse Sub-Menu" id="collapsePersonal">
         <hr style="background-color: rgb(250, 81, 81);">
@@ -54,14 +54,14 @@
         </button>
         <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
             data-target="#collapsePersonal" aria-expanded="false" aria-controls="collapsePersonal" [routerLink]='["/personaConsulta"]'>
-            <span class="fas fa-users"></span>Consultar Personal
+            <span class="fas fa-list-ol"></span>Consultar Personal
         </button>
         <hr>
     </div>
     <p>
         <a data-toggle="collapse"
         data-target="#collapseExamenes" aria-expanded="false" aria-controls="collapseExamenes" *ngIf="currentUser">
-        <i class="far fa-address-book"></i><span>Examenes</span></a>
+        <i class="fas fa-briefcase-medical"></i><span>Examenes</span></a>
     </p>
     <div class="collapse Sub-Menu" id="collapseExamenes">
         <hr style="background-color: rgb(250, 81, 81);">
@@ -71,10 +71,12 @@
         </button>
         <button class="btnbarra" style="width: 100%; " type="bootton" data-toggle="collapse"
             data-target="#collapseExamenes" aria-expanded="false" aria-controls="collapseExamenes" >
-            <span class="fas fa-users"></span>Consultar Examenes
+            <span class="fas fa-list-ol"></span>Consultar Examenes
         </button>
         <hr>
     </div>
+
+    <a [routerLink]='["/listachequeo"]' *ngIf="currentUser"><i class="fas fa-tasks"></i><span>Lista de Chequeo</span></a>
     
     <a [routerLink]='["/reportes"]' *ngIf="currentUser"><i class="fas fa-cog"></i><span>Reportes</span></a>
     

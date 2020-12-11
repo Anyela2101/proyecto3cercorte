@@ -46,6 +46,9 @@ namespace Datos.Migrations
                     b.Property<string>("Pregunta6")
                         .HasColumnType("varchar(10)");
 
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(4)");
+
                     b.HasKey("Codigo");
 
                     b.HasIndex("Idpersona");
@@ -70,7 +73,7 @@ namespace Datos.Migrations
                         .HasColumnType("varchar(10)");
 
                     b.Property<string>("Pregunta3")
-                        .HasColumnType("varchar(10)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Pregunta4")
                         .HasColumnType("varchar(50)");
@@ -81,11 +84,61 @@ namespace Datos.Migrations
                     b.Property<string>("Pregunta6")
                         .HasColumnType("varchar(10)");
 
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(4)");
+
                     b.HasKey("Codigo");
 
                     b.HasIndex("Idpersona");
 
                     b.ToTable("Conocimientos");
+                });
+
+            modelBuilder.Entity("Entidad.ListaChequeo", b =>
+                {
+                    b.Property<int>("Codigo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Pregunta1")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Pregunta2")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Pregunta3")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Pregunta4")
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Pregunta5")
+                        .HasColumnType("varchar(12)");
+
+                    b.Property<string>("Pregunta6")
+                        .HasColumnType("varchar(12)");
+
+                    b.Property<string>("Pregunta7")
+                        .HasColumnType("varchar(12)");
+
+                    b.Property<string>("Pregunta8")
+                        .HasColumnType("varchar(12)");
+
+                    b.Property<string>("Pregunta9")
+                        .HasColumnType("varchar(12)");
+
+                    b.Property<double>("Total")
+                        .HasColumnType("float");
+
+                    b.Property<string>("nit")
+                        .HasColumnType("varchar(15)");
+
+                    b.HasKey("Codigo");
+
+                    b.HasIndex("nit");
+
+                    b.ToTable("ListaChequeos");
                 });
 
             modelBuilder.Entity("Entidad.Persona", b =>
@@ -147,10 +200,13 @@ namespace Datos.Migrations
                         .HasColumnType("varchar(10)");
 
                     b.Property<string>("Pregunta3")
-                        .HasColumnType("varchar(10)");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Pregunta4")
                         .HasColumnType("varchar(10)");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("decimal(4)");
 
                     b.HasKey("Codigo");
 
@@ -233,6 +289,13 @@ namespace Datos.Migrations
                     b.HasOne("Entidad.Persona", null)
                         .WithMany()
                         .HasForeignKey("Idpersona");
+                });
+
+            modelBuilder.Entity("Entidad.ListaChequeo", b =>
+                {
+                    b.HasOne("Entidad.Restaurante", null)
+                        .WithMany()
+                        .HasForeignKey("nit");
                 });
 
             modelBuilder.Entity("Entidad.Persona", b =>

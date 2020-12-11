@@ -43,6 +43,35 @@ namespace Datos.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ListaChequeos",
+                columns: table => new
+                {
+                    Codigo = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Pregunta1 = table.Column<string>(type: "varchar(10)", nullable: true),
+                    Pregunta2 = table.Column<string>(type: "varchar(10)", nullable: true),
+                    Pregunta3 = table.Column<string>(type: "varchar(10)", nullable: true),
+                    Pregunta4 = table.Column<string>(type: "varchar(10)", nullable: true),
+                    Pregunta5 = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Pregunta6 = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Pregunta7 = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Pregunta8 = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Pregunta9 = table.Column<string>(type: "varchar(12)", nullable: true),
+                    nit = table.Column<string>(type: "varchar(15)", nullable: true),
+                    Total = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ListaChequeos", x => x.Codigo);
+                    table.ForeignKey(
+                        name: "FK_ListaChequeos_Restaurantes_nit",
+                        column: x => x.nit,
+                        principalTable: "Restaurantes",
+                        principalColumn: "NIT",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Personas",
                 columns: table => new
                 {
@@ -81,7 +110,8 @@ namespace Datos.Migrations
                     Pregunta4 = table.Column<string>(type: "varchar(50)", nullable: true),
                     Pregunta5 = table.Column<string>(type: "varchar(10)", nullable: true),
                     Pregunta6 = table.Column<string>(type: "varchar(10)", nullable: true),
-                    Idpersona = table.Column<string>(type: "varchar(12)", nullable: true)
+                    Idpersona = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Total = table.Column<decimal>(type: "decimal(4)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,11 +132,12 @@ namespace Datos.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Pregunta1 = table.Column<string>(type: "varchar(10)", nullable: true),
                     Pregunta2 = table.Column<string>(type: "varchar(10)", nullable: true),
-                    Pregunta3 = table.Column<string>(type: "varchar(10)", nullable: true),
+                    Pregunta3 = table.Column<string>(type: "varchar(50)", nullable: true),
                     Pregunta4 = table.Column<string>(type: "varchar(50)", nullable: true),
                     Pregunta5 = table.Column<string>(type: "varchar(10)", nullable: true),
                     Pregunta6 = table.Column<string>(type: "varchar(10)", nullable: true),
-                    Idpersona = table.Column<string>(type: "varchar(12)", nullable: true)
+                    Idpersona = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Total = table.Column<decimal>(type: "decimal(4)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -127,9 +158,10 @@ namespace Datos.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Pregunta1 = table.Column<string>(type: "varchar(10)", nullable: true),
                     Pregunta2 = table.Column<string>(type: "varchar(10)", nullable: true),
-                    Pregunta3 = table.Column<string>(type: "varchar(10)", nullable: true),
+                    Pregunta3 = table.Column<string>(type: "varchar(50)", nullable: true),
                     Pregunta4 = table.Column<string>(type: "varchar(10)", nullable: true),
-                    Idpersona = table.Column<string>(type: "varchar(12)", nullable: true)
+                    Idpersona = table.Column<string>(type: "varchar(12)", nullable: true),
+                    Total = table.Column<decimal>(type: "decimal(4)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -153,6 +185,11 @@ namespace Datos.Migrations
                 column: "Idpersona");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ListaChequeos_nit",
+                table: "ListaChequeos",
+                column: "nit");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Personas_Idrestaurante",
                 table: "Personas",
                 column: "Idrestaurante");
@@ -170,6 +207,9 @@ namespace Datos.Migrations
 
             migrationBuilder.DropTable(
                 name: "Conocimientos");
+
+            migrationBuilder.DropTable(
+                name: "ListaChequeos");
 
             migrationBuilder.DropTable(
                 name: "Practicas");

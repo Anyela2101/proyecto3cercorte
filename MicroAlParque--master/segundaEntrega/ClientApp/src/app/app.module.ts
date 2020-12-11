@@ -27,6 +27,8 @@ import { ReportesComponent } from './segundaentrega/reportes/reportes.component'
 import { FiltroRestaurantePipe } from './pipe/filtro-restaurante.pipe';
 import {JwtInterceptor} from './services/jwt.interceptor';
 import { LoginComponent } from './login/login.component';
+import { ListaChequeoComponent } from './segundaentrega/lista-chequeo/lista-chequeo.component';
+import { RestauranteConsultaComponent } from './segundaentrega/restaurante-consulta/restaurante-consulta.component';
 
 
 @NgModule({
@@ -49,6 +51,8 @@ import { LoginComponent } from './login/login.component';
     ReportesComponent,
     FiltroRestaurantePipe,
     LoginComponent,
+    ListaChequeoComponent,
+    RestauranteConsultaComponent,
     
   ],
   imports: [
